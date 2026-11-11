@@ -25,7 +25,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://fabio-p288r3h9g-fabiodel.vercel.app",
-        "https://fabio-p288r3h9g-fabiodel.vercel.app"
+        "https://fabio-5o6vwy40g-fabiodel.vercel.app/"
+        
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
