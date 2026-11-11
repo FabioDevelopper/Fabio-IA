@@ -1,0 +1,5 @@
+openai>=1.0.0
+python-dotenv>=1.0.0
+tavily-python>=0.7.0
+fastapi
+uvicorn[standard]

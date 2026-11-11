@@ -1,0 +1,484 @@
+
+@import "tailwindcss";
+
+/* =========================================
+   FABIO IA — THEME GLOBAL
+========================================= */
+
+:root {
+  color-scheme: dark;
+
+  --background: #0b0b0b;
+  --foreground: #f5f5f5;
+  --surface: #151515;
+  --surface-secondary: #1c1c1c;
+  --border: #303030;
+  --muted: #929292;
+  --accent: #ffffff;
+  --accent-hover: #e5e5e5;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #888888;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #555555;
+  color: #ffffff;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #454545 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #454545;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+/* =========================================
+   MARKDOWN — CONTENU DES RÉPONSES
+========================================= */
+
+.markdown-content {
+  max-width: 100%;
+  color: #e5e5e5;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.markdown-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-content > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content p {
+  margin: 12px 0;
+  color: #e5e5e5;
+  line-height: 1.8;
+}
+
+/* Titres */
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  color: #ffffff;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.markdown-content h1 {
+  margin: 28px 0 15px;
+  font-size: 25px;
+}
+
+.markdown-content h2 {
+  margin: 25px 0 13px;
+  font-size: 21px;
+}
+
+.markdown-content h3 {
+  margin: 21px 0 11px;
+  font-size: 18px;
+}
+
+.markdown-content h4 {
+  margin: 18px 0 9px;
+  font-size: 16px;
+}
+
+/* Texte important */
+
+.markdown-content strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.markdown-content em {
+  color: #d4d4d4;
+}
+
+.markdown-content del {
+  color: #999999;
+}
+
+/* Listes */
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 14px 0 18px;
+  padding-left: 25px;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin: 7px 0;
+  padding-left: 4px;
+  line-height: 1.7;
+}
+
+.markdown-content li::marker {
+  color: #929292;
+}
+
+/* Liens */
+
+.markdown-content a {
+  color: #d4d4d4;
+  text-decoration: underline;
+  text-decoration-color: #777777;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+  transition: color 150ms ease;
+}
+
+.markdown-content a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+/* Citations */
+
+.markdown-content blockquote {
+  margin: 18px 0;
+  padding: 12px 18px;
+  border-left: 3px solid #777777;
+  border-radius: 0 8px 8px 0;
+  background: #181818;
+  color: #bcbcbc;
+}
+
+.markdown-content blockquote p {
+  color: #bcbcbc;
+}
+
+/* Séparateurs */
+
+.markdown-content hr {
+  margin: 25px 0;
+  border: 0;
+  border-top: 1px solid #333333;
+}
+
+/* Tableaux */
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #353535;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-content th {
+  background: #202020;
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.markdown-content td {
+  color: #d1d1d1;
+}
+
+.markdown-content tr:hover td {
+  background: #191919;
+}
+
+/* Images */
+
+.markdown-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 18px 0;
+  border-radius: 12px;
+}
+
+/* Code en ligne */
+
+.markdown-content code:not(pre code) {
+  padding: 2px 6px;
+  border: 1px solid #383838;
+  border-radius: 5px;
+  background: #242424;
+  color: #eeeeee;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* =========================================
+   BLOCS DE CODE
+========================================= */
+
+.markdown-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.markdown-content pre code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FABIO IA — INDICATEUR DE CHARGEMENT
+========================================= */
+
+.typing-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a0a0a0;
+  animation: fabioTyping 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fabioTyping {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+[role="status"] {
+  max-width: calc(100vw - 32px);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 13px;
+  }
+
+  .markdown-content {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .markdown-content h1 {
+    font-size: 22px;
+  }
+
+  .markdown-content h2 {
+    font-size: 19px;
+  }
+
+  .markdown-content h3 {
+    font-size: 16px;
+  }
+
+  .markdown-content table {
+    font-size: 12px;
+  }
+
+  .markdown-content th,
+  .markdown-content td {
+    padding: 9px 10px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITÉ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   FABIO IA — BLANC PUR, SANS TEXTE GRIS
+========================================= */
+
+:root {
+  --muted: #ffffff;
+  --foreground: #ffffff;
+  --accent: #ffffff;
+  --accent-hover: #ffffff;
+}
+
+/* Tous les textes gris de Tailwind deviennent blancs */
+.text-gray-300,
+.text-gray-400,
+.text-gray-500,
+.text-gray-600,
+.text-gray-700,
+.text-neutral-300,
+.text-neutral-400,
+.text-neutral-500,
+.text-neutral-600,
+.text-zinc-300,
+.text-zinc-400,
+.text-zinc-500,
+.text-zinc-600 {
+  color: #ffffff !important;
+}
+
+/* Textes Markdown */
+.markdown-content,
+.markdown-content p,
+.markdown-content li,
+.markdown-content em,
+.markdown-content td,
+.markdown-content blockquote,
+.markdown-content blockquote p {
+  color: #ffffff;
+}
+
+/* Titres et textes importants */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content strong {
+  color: #ffffff;
+}
+
+/* Liens */
+.markdown-content a {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+/* Icônes */
+.text-gray-400 svg,
+.text-gray-500 svg,
+.text-gray-600 svg {
+  color: #ffffff;
+}
+
+/* Bordures discrètes blanches */
+.markdown-content th,
+.markdown-content td,
+.markdown-content hr {
+  border-color: rgb(255 255 255 / 25%);
+}
+
+/* Placeholder blanc légèrement transparent */
+input::placeholder,
+textarea::placeholder {
+  color: rgb(255 255 255 / 65%);
+}
+
+/* Sélection de texte */
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
