@@ -21,15 +21,21 @@ app = FastAPI(
 # 2. CONFIGURATION CORS
 # ==================================================
 
+# ==================================================
+# 2. CONFIGURATION CORS
+# ==================================================
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://fabio-p288r3h9g-fabiodel.vercel.app",
-        "https://fabio-5o6vwy40g-fabiodel.vercel.app"
-        
+        "https://fabio-ia.vercel.app",
+
+        # Anciennes adresses conservées si nécessaire
+    
+        "https://fabio-5o6vwy40g-fabiodel.vercel.app",
     ],
     allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
 
